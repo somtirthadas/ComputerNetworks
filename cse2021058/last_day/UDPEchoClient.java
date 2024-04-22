@@ -15,8 +15,8 @@ public class UDPEchoClient {
             System.exit(1);
         }
         accessServer();
-	}
-        private static void accessServer(){
+     }
+     private static void accessServer(){
             try{
                 datagramSocket=new DatagramSocket();
                 Scanner userEntry=new Scanner(System.in);
