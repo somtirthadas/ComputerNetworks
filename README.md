@@ -1,1 +1,1 @@
-CN lab, 6th sem. 2024
+CN Practical, 6th sem, 2024
