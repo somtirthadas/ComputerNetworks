@@ -1,0 +1,26 @@
+import java.net.*;
+import java.io.*;
+ 
+class FactClient {
+    public static void main(String args[]) throws Exception {
+        System.out.println("Client started....");
+        Socket s = new Socket("localhost", 3000);
+        DataInputStream din = new DataInputStream(s.getInputStream());
+        DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+ 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter any number : ");
+        String str = br.readLine();
+ 
+        dout.writeUTF(str);
+        dout.flush();
+ 
+        String str2 = din.readUTF();
+        System.out.println("Factorial value received from server.");
+        System.out.println(str2);
+ 
+        dout.close();
+        din.close();
+        s.close();
+    }
+}
